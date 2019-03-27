@@ -1,0 +1,13 @@
+# Folder with compile project, you need only source code
+build
+
+# Production uncomment
+# dist
+# gulpfile.js
+# package.json
+
+# Folder with package
+node_modules
+
+# Sass cache
+.sass-cache
