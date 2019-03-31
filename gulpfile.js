@@ -9,7 +9,7 @@ const browserSync  = require('browser-sync').create(),
       rename       = require('gulp-rename'),
       del          = require('del'),
       sourcemaps   = require('gulp-sourcemaps'),
-      uglify       = require('gulp-uglify'),
+      uglify       = require('gulp-uglify-es').default,
 	  wait         = require('gulp-wait'),
 	  concat	   = require('gulp-concat');
 
@@ -62,7 +62,7 @@ function js() {
 			title: 'SCRIPTS'
 		}))
 		.pipe(sourcemaps.init())
-		.pipe(concat('app.js'))
+		.pipe(concat('bundle.js'))
 		.pipe(uglify())
 		.pipe(rename({
 			suffix: '.min'
@@ -145,6 +145,7 @@ function font() {
 function jslib() {
 	return gulp
 		.src([
+			'./node_modules/jquery/dist/jquery.slim.min.js',
 			'src/lib/js/*.js',
 		])
 		.pipe(gulp.dest(path.build.jslib))
