@@ -1,11 +1,43 @@
 @font-face {
-    font-family: 'Bebas Neue Cyrillic';
-    src: url('../fonts/Bebas/BebasNeueCyrillic.eot');
-    src: local('Bebas Neue Cyrillic'), local('BebasNeueCyrillic'),
-        url('../fonts/Bebas/BebasNeueCyrillic.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Bebas/BebasNeueCyrillic.woff2') format('woff2'),
-        url('../fonts/Bebas/BebasNeueCyrillic.woff') format('woff'),
-        url('../fonts/Bebas/BebasNeueCyrillic.ttf') format('truetype');
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro/GothamPro.eot');
+    src: local('Gotham Pro'), local('GothamPro'),
+        url('../fonts/GothamPro/GothamPro.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro/GothamPro.woff') format('woff'),
+        url('../fonts/GothamPro/GothamPro.ttf') format('truetype');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro/GothamPro-Medium.eot');
+    src: local('Gotham Pro Medium'), local('GothamProMedium'),
+        url('../fonts/GothamPro/GothamPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro/GothamPro-Medium.woff') format('woff'),
+        url('../fonts/GothamPro/GothamPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro/GothamPro-Bold.eot');
+    src: local('Gotham Pro Bold'), local('GothamProBold'),
+        url('../fonts/GothamPro/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro/GothamPro-Bold.woff') format('woff'),
+        url('../fonts/GothamPro/GothamPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham Pro';
+    src: url('../fonts/GothamPro/GothamPro-Black.eot');
+    src: local('Gotham Pro Black'), local('GothamProBlack'),
+        url('../fonts/GothamPro/GothamPro-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/GothamPro/GothamPro-Black.woff') format('woff'),
+        url('../fonts/GothamPro/GothamPro-Black.ttf') format('truetype');
+    font-weight: 900;
     font-style: normal;
 }

@@ -1,0 +1,56 @@
+.header
+	position: fixed
+	z-index: 99999
+	width: 100%
+	background-color: #ffffff
+	& > .container
+		display: flex
+		align-items: center
+		margin-top: 15px
+		margin-bottom: 15px
+	&__logotype
+		flex: 0 0 10%
+		&-image
+			vertical-align: middle
+			width: 50px
+			height: auto
+	&__nav
+		flex: 0 1 80%
+		display: flex
+		justify-content: center
+		&-link
+			color: $font-color-primary
+			&:not(:last-of-type)
+				margin-right: 30px
+	&__search
+		&-action:hover
+			cursor: pointer
+		&-image
+			vertical-align: middle
+			width: 25px
+			height: auto
+	&__cart
+		flex: 0 2 10%
+		&-action
+			display: flex
+			justify-content: flex-end
+		&-action:hover
+			cursor: pointer
+		&-image
+			vertical-align: middle
+			width: 25px
+			height: auto
+	&__after
+		position: relative
+		background-color: $primary
+		text-align: center
+		&-language
+			position: absolute
+			right: 0
+			top: 0
+			& > a
+				color: $font-color-primary
+				&:hover
+					color: $font-color-secondary
+				&:not(:last-of-type)
+					margin-right: 15px

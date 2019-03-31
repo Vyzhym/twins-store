@@ -1,7 +1,7 @@
 const browserSync  = require('browser-sync').create(),
       gulp         = require('gulp'),
-      pug          = require('gulp-pug'),
-      sass         = require('gulp-sass'),
+      gpug          = require('gulp-pug'),
+      gsass         = require('gulp-sass'),
       cleancss     = require('gulp-clean-css'),
       autoprefixer = require('gulp-autoprefixer'),
       imagemin     = require('gulp-imagemin'),
@@ -76,7 +76,7 @@ function sass() {
 	return gulp
 		.src([path.src.style])
 		.pipe(wait(200))
-		.pipe(sass())
+		.pipe(gsass())
 		.on('error', notify.onError({
 			message: '\n<%= error.message %>',
 			title: 'SASS'
@@ -97,7 +97,7 @@ function sass() {
 function pug() {
 	return gulp
 		.src([path.src.pug])
-		.pipe(pug({
+		.pipe(gpug({
 			pretty: true
 		}))
 		.on('error', notify.onError({
@@ -166,8 +166,8 @@ function watcher() {
 	gulp.watch(path.watch.js, gulp.series(js, reload));
 	gulp.watch(path.watch.image, gulp.series(image, reload));
 	gulp.watch(path.watch.font, gulp.series(font, reload));
-	gulp.watch(path.build.jslib, gulp.series(jsLib, reload));
-	gulp.watch(path.build.csslib, gulp.series(cssLib, reload));
+	gulp.watch(path.build.jslib, gulp.series(jslib, reload));
+	gulp.watch(path.build.csslib, gulp.series(csslib, reload));
 }
 
 function clean() {

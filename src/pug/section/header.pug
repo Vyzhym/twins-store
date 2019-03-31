@@ -1,0 +1,23 @@
+header.header
+	.container
+		.header__logotype
+			a(href="/").header__logotype-link
+				img.header__logotype-image(src="/img/logo.svg", alt="twins store")
+		nav.header__nav
+			a.header__nav-link(href="/catalog") Каталог
+			a.header__nav-link(href="/corporates") Корпоративные заказы
+			a.header__nav-link(href="/delivery") Доставка и оплата
+			a.header__nav-link(href="/about") О нас
+			a.header__nav-link(href="/contacts") Контакты
+			//- .header__nav-search
+			//- 	img.header__nav-search-image(src="/img/icon/search.svg", alt="")
+		.header__cart
+			.header__cart-action
+				img.header__cart-image(src="/img/icon/cart.svg", alt="")
+
+	.header__after
+		.container
+			.header__after-text Бесплатная доставка по Украине при заказе двух и более товаров!
+			.header__after-language
+				a(href="/ru/") RU
+				a(href="/ua/") UA
