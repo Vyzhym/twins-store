@@ -1,8 +1,9 @@
 const browserSync  = require('browser-sync').create(),
       gulp         = require('gulp'),
-      gpug          = require('gulp-pug'),
-      gsass         = require('gulp-sass'),
+      gpug         = require('gulp-pug'),
+      gsass        = require('gulp-sass'),
       cleancss     = require('gulp-clean-css'),
+      gcmq         = require('gulp-group-css-media-queries'),
       autoprefixer = require('gulp-autoprefixer'),
       imagemin     = require('gulp-imagemin'),
       notify       = require('gulp-notify'),
@@ -10,8 +11,8 @@ const browserSync  = require('browser-sync').create(),
       del          = require('del'),
       sourcemaps   = require('gulp-sourcemaps'),
       uglify       = require('gulp-uglify-es').default,
-	  wait         = require('gulp-wait'),
-	  concat	   = require('gulp-concat');
+      wait         = require('gulp-wait'),
+      concat       = require('gulp-concat');
 
 const path = {
 	build: {
@@ -19,9 +20,7 @@ const path = {
 		js    : 'build/js/',
 		style : 'build/style/',
 		image : 'build/img/',
-		font  : 'build/fonts/',
-		jslib : 'build/js/lib/',
-		csslib: 'build/style/lib/'
+		font  : 'build/fonts/'
 	},
 	src: {
 		pug  : 'src/pug/*.pug',
@@ -35,7 +34,9 @@ const path = {
 		js   : 'src/js/*.js',
 		style: 'src/sass/**/*.{sass,scss}',
 		image: 'src/img/**/*.{jpg,jpeg,png,gif,svg,ico}',
-		font : 'src/font/**/*'
+		font : 'src/font/**/*',
+		jslib: 'src/lib/js/*.js',
+		csslib: 'src/lib/css/*.css'
 	}
 };
 
@@ -85,6 +86,7 @@ function sass() {
 		.pipe(autoprefixer({
 			browsers: ['last 4 versions']
 		}))
+		.pipe(gcmq())
 		.pipe(cleancss())
 		.pipe(rename({
 			suffix: '.min'
@@ -111,26 +113,26 @@ function pug() {
 function image() {
 	return gulp
 		.src([path.src.image])
-		.pipe(imagemin([
-			imagemin.gifsicle({
-				interlaced: true
-			}),
-			imagemin.jpegtran({
-				progressive: true
-			}),
-			imagemin.optipng({
-				optimizationLevel: 5
-			}),
-			imagemin.svgo({
-				plugins: [{
-						removeViewBox: true
-					},
-					{
-						cleanupIDs: false
-					}
-				]
-			})
-		]))
+		// .pipe(imagemin([
+		// 	imagemin.gifsicle({
+		// 		interlaced: true
+		// 	}),
+		// 	imagemin.jpegtran({
+		// 		progressive: true
+		// 	}),
+		// 	imagemin.optipng({
+		// 		optimizationLevel: 5
+		// 	}),
+		// 	imagemin.svgo({
+		// 		plugins: [{
+		// 				removeViewBox: true
+		// 			},
+		// 			{
+		// 				cleanupIDs: false
+		// 			}
+		// 		]
+		// 	})
+		// ]))
 		.pipe(gulp.dest(path.build.image))
 		.pipe(browserSync.stream());
 }
@@ -146,9 +148,11 @@ function jslib() {
 	return gulp
 		.src([
 			'./node_modules/jquery/dist/jquery.slim.min.js',
+			'./node_modules/jquery.marquee/jquery.marquee.min.js',
+			'./node_modules/slick-carousel/slick/slick.min.js',
 			'src/lib/js/*.js',
 		])
-		.pipe(gulp.dest(path.build.jslib))
+		.pipe(gulp.dest(path.build.js))
 		.pipe(browserSync.stream());
 }
 
@@ -156,8 +160,10 @@ function csslib() {
 	return gulp
 		.src([
 			'./node_modules/normalize.css/normalize.css',
+			'./node_modules/slick-carousel/slick/slick.css',
+			'./node_modules/slick-carousel/slick/slick-theme.css',
 		])
-		.pipe(gulp.dest(path.build.csslib))
+		.pipe(gulp.dest(path.build.style))
 		.pipe(browserSync.stream());
 }
 
@@ -167,8 +173,8 @@ function watcher() {
 	gulp.watch(path.watch.js, gulp.series(js, reload));
 	gulp.watch(path.watch.image, gulp.series(image, reload));
 	gulp.watch(path.watch.font, gulp.series(font, reload));
-	gulp.watch(path.build.jslib, gulp.series(jslib, reload));
-	gulp.watch(path.build.csslib, gulp.series(csslib, reload));
+	gulp.watch(path.watch.jslib, gulp.series(jslib, reload));
+	gulp.watch(path.watch.csslib, gulp.series(csslib, reload));
 }
 
 function clean() {
