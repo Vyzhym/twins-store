@@ -1,6 +1,18 @@
 .btn
 	position: relative
+	z-index: 1
 	&-primary
 		.link-background
-
+			position: absolute
+			z-index: 3
+			top: -45px
+			right: -45px
+			width: 85px
+			height: 85px
+			border-radius: 50%
+			background-image: linear-gradient(to bottom, #ffb900, #f9ea00)
 		.link-title
+			position: relative
+			z-index: 5
+			color: $font-color-primary
+			font-weight: 500

@@ -1,5 +1,5 @@
 .popup
-	display: flex
+	display: none
 	justify-content: flex-end
 	position: fixed
 	z-index: 150
@@ -9,11 +9,11 @@
 	width: 100%
 	height: 100%
 	&__container
+		position: relative
+		right: -1000px
 		background-color: #ffffff
 		height: 100%
 		width: 40%
 		display: flex
 		&-content
-			padding-top: 100px
-			padding-left: 30px
-			padding-right: 30px
+			padding: 30px

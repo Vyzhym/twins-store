@@ -2,6 +2,7 @@
 	display: flex
 	align-items: center
 	justify-content: center
+	margin-bottom: 50px
 	&__info
 		flex: 0 0 50%
 		max-width: 50%
@@ -9,6 +10,8 @@
 		flex-direction: column
 		justify-content: center
 		align-items: center
+		.title
+			margin-bottom: 85px
 		.address
 			p
 				font-style: normal
@@ -23,15 +26,23 @@
 		& > .image
 			position: relative
 			text-align: right
+			z-index: 5
 			& > img
 				width: auto
 				height: 470px
 		.map
 			position: absolute
 			top: 50%
-			right: 300px
-			z-index: 5
+			z-index: 4
 			transform: translateY(-50%)
-			& > div
-				width: 350px
+			& > #twinsMap
+				width: 500px
 				height: 550px
+		.circle
+			position: absolute
+			left: -75px
+			bottom: -70px
+			width: 150px
+			height: 150px
+			border-radius: 50%
+			background-image: linear-gradient(to bottom, #ffb900, #f9ea00)

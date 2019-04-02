@@ -12,7 +12,7 @@ header.header
 					a.header__nav-dropdown__list-item(href="#") Сумки
 					a.header__nav-dropdown__list-item(href="#") Одежда
 					a.header__nav-dropdown__list-item(href="#") Аксессуары
-			a.header__nav-link(href="/corporates") Корпоративные заказы
+			a.header__nav-link(href="/corporates").header__nav-link__active Корпоративные заказы
 			a.header__nav-link(href="/delivery") Доставка и оплата
 			a.header__nav-link(href="/about") О нас
 			a.header__nav-link(href="/contacts") Контакты
@@ -21,10 +21,10 @@ header.header
 		.header__cart
 			.header__cart-action
 				img.header__cart-image(src="/img/icon/cart.svg", alt="")
-
 	.header__after
 		.container
-			.header__after-text Бесплатная доставка по Украине при заказе двух и более товаров!
+			.header__after-text
+				span Бесплатная доставка по Украине при заказе двух и более товаров!
 			.header__after-language
 				a(href="/ru/") RU
 				a(href="/ua/") UA

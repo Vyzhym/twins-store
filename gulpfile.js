@@ -147,9 +147,10 @@ function font() {
 function jslib() {
 	return gulp
 		.src([
-			'./node_modules/jquery/dist/jquery.slim.min.js',
+			'./node_modules/jquery/dist/jquery.min.js',
 			'./node_modules/jquery.marquee/jquery.marquee.min.js',
 			'./node_modules/slick-carousel/slick/slick.min.js',
+			'./node_modules/leaflet/dist/leaflet.js',
 			'src/lib/js/*.js',
 		])
 		.pipe(gulp.dest(path.build.js))
@@ -162,6 +163,7 @@ function csslib() {
 			'./node_modules/normalize.css/normalize.css',
 			'./node_modules/slick-carousel/slick/slick.css',
 			'./node_modules/slick-carousel/slick/slick-theme.css',
+			'./node_modules/leaflet/dist/leaflet.css',
 		])
 		.pipe(gulp.dest(path.build.style))
 		.pipe(browserSync.stream());

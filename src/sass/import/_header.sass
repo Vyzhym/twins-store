@@ -1,6 +1,6 @@
 .header
 	position: fixed
-	z-index: 99999
+	z-index: 10005
 	width: 100%
 	background-color: #ffffff
 	& > .container
@@ -21,14 +21,17 @@
 			padding: 15px 25px
 			&:hover
 				background-color: $primary
+			&__active
+				font-weight: bold
 		&-search
-			display: inherit
 			padding-left: 25px
 			padding-right: 25px
 			transition: all .3s ease
+			display: flex
+			align-items: center
 			&-image
 				width: 22px
-				height: auto
+				height: 22px
 			&:hover
 				cursor: pointer
 				background-color: $primary
@@ -56,13 +59,6 @@
 				.header__nav-dropdown__list
 					visibility: visible
 					opacity: 1
-	&__search
-		&-action:hover
-			cursor: pointer
-		&-image
-			vertical-align: middle
-			width: 22px
-			height: auto
 	&__cart
 		flex: 0 2 10%
 		&-action
@@ -73,7 +69,7 @@
 		&-image
 			vertical-align: middle
 			width: 25px
-			height: auto
+			height: 25px
 	&__after
 		position: relative
 		background-color: $primary
