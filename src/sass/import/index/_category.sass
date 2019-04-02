@@ -29,9 +29,23 @@
 				img
 					transition: transform .3s ease
 					max-width: 350px
+				.banana-image
+					max-width: 250px
 			&:hover
 				.title
 					color: $primary
 				.image
 					img
 						transform: scale(1.05)
+
+@media (max-width: 1440px)
+	.category
+		&__list
+			&-item
+				margin-left: 65px
+				max-width: 340px
+				.image
+					width: 340px
+					height: 340px
+					img
+						max-width: 200px

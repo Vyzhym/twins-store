@@ -4,7 +4,14 @@ header.header
 			a(href="/").header__logotype-link
 				img.header__logotype-image(src="/img/logo.svg", alt="twins store")
 		nav.header__nav
-			a.header__nav-link(href="/catalog") Каталог
+			.header__nav-dropdown
+				a.header__nav-link(href="/catalog") Каталог
+				.header__nav-dropdown__list
+					a.header__nav-dropdown__list-item(href="#") Бананки
+					a.header__nav-dropdown__list-item(href="#") Рюкзаки
+					a.header__nav-dropdown__list-item(href="#") Сумки
+					a.header__nav-dropdown__list-item(href="#") Одежда
+					a.header__nav-dropdown__list-item(href="#") Аксессуары
 			a.header__nav-link(href="/corporates") Корпоративные заказы
 			a.header__nav-link(href="/delivery") Доставка и оплата
 			a.header__nav-link(href="/about") О нас

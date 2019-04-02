@@ -45,3 +45,17 @@
 			color: $font-color-secondary
 	img
 		width: 32px
+
+@media (max-width: 1440px)
+	.footer
+		&__menu
+			flex: 1 30%
+			&-list
+				&:first-child
+					flex: 1 40%
+				&:last-child
+					flex: 1 60%
+		&__contact
+			flex: 1 50%
+		&__info
+			flex: 1 20%

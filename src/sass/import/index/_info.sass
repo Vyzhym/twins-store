@@ -29,9 +29,9 @@
 		.info__image-animation
 			position: absolute
 			z-index: 3
-			bottom: -60px
-			right: -60px
-			width: 150px
+			bottom: -130px
+			right: -130px
+			width: 260px
 	&__category
 		position: absolute
 		z-index: 10
@@ -51,3 +51,18 @@
 				&:hover
 					color: $primary
 
+@media (max-width: 1440px)
+	.info
+		&__container
+			height: 455px
+		&__image
+			top: -50px
+			right: 100px
+			.info__image-animation
+				bottom: -60px
+				right: -60px
+				width: 150px
+			.info__image-main
+				height: 555px
+		&__title
+			width: 70%

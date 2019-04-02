@@ -32,6 +32,30 @@
 			&:hover
 				cursor: pointer
 				background-color: $primary
+		&-dropdown
+			position: relative
+			z-index: 1
+			display: flex
+			&__list
+				position: absolute
+				z-index: 5
+				top: 100%
+				left: 0
+				visibility: hidden
+				opacity: 0
+				background-color: $primary
+				padding: 15px 25px
+				margin-left: -2px
+				border-left: 2px solid #ffffff
+				border-right: 2px solid #ffffff
+				transition: visibility .3s, opacity .3s linear
+				&-item
+					padding: 15px 25px
+			&:hover
+				background-color: $primary
+				.header__nav-dropdown__list
+					visibility: visible
+					opacity: 1
 	&__search
 		&-action:hover
 			cursor: pointer

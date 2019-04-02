@@ -17,6 +17,7 @@
 					&:hover
 						color: $primary
 	&__map
+		position: relative
 		flex: 0 1 50%
 		max-width: 50%
 		& > .image
@@ -25,3 +26,12 @@
 			& > img
 				width: auto
 				height: 470px
+		.map
+			position: absolute
+			top: 50%
+			right: 300px
+			z-index: 5
+			transform: translateY(-50%)
+			& > div
+				width: 350px
+				height: 550px
