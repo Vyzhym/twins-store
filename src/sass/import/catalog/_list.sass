@@ -1,0 +1,30 @@
+.catalog
+	padding-top: 100px
+	display: flex
+	flex-wrap: wrap
+	&__list
+		flex: 0 0 calc(100% - 265px - 30px)
+		&-content
+			display: flex
+			flex-wrap: wrap
+	&__filter
+		flex: 0 1 265px
+		background-color: #f5f5f5
+		padding: 15px 25px
+		& > div
+			display: flex
+			flex-direction: column
+			margin-bottom: 30px
+		&-sex
+			margin-bottom: 0
+	&__description
+		flex: 1 1 100%
+		&-title
+			font-size: 1.5rem
+			font-weight: normal
+			color: $font-color-primary
+		&-text
+			font-size: 1rem
+			font-weight: normal
+			color: $font-color-gray
+

@@ -3106,6 +3106,13 @@ invert-kv@^1.0.0:
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
   integrity sha1-EEqOSqym09jNFXqO+L+rLXo//bY=
 
+ion-rangeslider@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/ion-rangeslider/-/ion-rangeslider-2.3.0.tgz#7957ce2e78acfc956b8c43009373da91f743347e"
+  integrity sha512-7TtH9/X4Aq/xCzboWxjwlv20gVqR90Ysc3aehMlTuH2/ULaSxpB80hq+yvD1N0FwWbPDtxQpjQrz/iX+LWXKmg==
+  dependencies:
+    jquery ">=1.8"
+
 irregular-plurals@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/irregular-plurals/-/irregular-plurals-2.0.0.tgz#39d40f05b00f656d0b7fa471230dd3b714af2872"
@@ -3516,7 +3523,7 @@ jquery.marquee@^1.5.0:
   resolved "https://registry.yarnpkg.com/jquery.marquee/-/jquery.marquee-1.5.0.tgz#2d65e2abb2b9240054113bc4d676ccb98eea5ea2"
   integrity sha1-LWXiq7K5JABUETvE1nbMuY7qXqI=
 
-jquery@^3.3.1:
+jquery@>=1.8, jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
