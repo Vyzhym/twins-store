@@ -84,7 +84,7 @@ function sass() {
 		}))
 		.pipe(sourcemaps.init())
 		.pipe(autoprefixer({
-			browsers: ['last 4 versions']
+			browsers: ['last 20 versions']
 		}))
 		.pipe(gcmq())
 		.pipe(cleancss())
@@ -164,6 +164,7 @@ function csslib() {
 			'./node_modules/slick-carousel/slick/slick.css',
 			'./node_modules/slick-carousel/slick/slick-theme.css',
 			'./node_modules/leaflet/dist/leaflet.css',
+			'src/lib/css/*.css',
 		])
 		.pipe(gulp.dest(path.build.style))
 		.pipe(browserSync.stream());

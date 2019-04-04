@@ -1,0 +1,40 @@
+.catalog
+	&__filter
+		flex: 0 1 265px
+		max-width: 265px
+		&-price,
+		&-type,
+		&-color,
+		&-size,
+		&-date,
+		&-sex
+			display: flex
+			flex-direction: column
+			margin-bottom: 30px
+		&-price
+			&__title
+				margin-bottom: 15px
+				&:before
+					content: ''
+					display: inline-block
+					vertical-align: middle
+					background-image: url('../img/icon/filter.svg')
+					background-repeat: no-repeat
+					background-size: contain
+					background-position: center
+					width: 20px
+					height: 19px
+					margin-right: 30px
+		&-color
+			margin-bottom: 15px
+			&__list
+				margin-top: 15px
+				display: inline-flex
+				flex-wrap: wrap
+				align-items: center
+				span
+					margin-bottom: 15px
+					&:nth-child(6n)
+						margin-right: 0
+		&-sex
+			margin-bottom: 0

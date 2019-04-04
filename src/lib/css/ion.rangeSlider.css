@@ -1,0 +1,128 @@
+/**
+Ion.RangeSlider, 2.3.0
+© Denis Ineshin, 2010 - 2018, IonDen.com
+Build date: 2018-12-11 23:23:51
+*/
+.irs {
+  position: relative;
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+.irs-line {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none !important;
+}
+.irs-bar {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 0;
+}
+.irs-handle {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  cursor: default;
+  z-index: 1;
+}
+.irs-handle.type_last {
+  z-index: 2;
+}
+.irs-from,
+.irs-to,
+.irs-single {
+  position: absolute;
+  display: block;
+  top: 30px;
+  left: 0;
+  cursor: default;
+  white-space: nowrap;
+}
+.irs-disable-mask {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: -1%;
+  width: 102%;
+  height: 100%;
+  cursor: default;
+  background: rgba(0, 0, 0, 0);
+  z-index: 2;
+}
+.lt-ie9 .irs-disable-mask {
+  background: #000;
+  filter: alpha(opacity=0);
+  cursor: not-allowed;
+  -webkit-filter: alpha(opacity=0);
+}
+.irs-disabled {
+  opacity: 0.4;
+}
+.irs-hidden-input {
+  position: absolute !important;
+  display: block !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden;
+  outline: none !important;
+  z-index: -9999 !important;
+  background: none !important;
+  border-style: solid !important;
+  border-color: transparent !important;
+}
+.irs--round {
+  height: 50px;
+}
+.irs--round .irs-line {
+  top: 15px;
+  height: 2px;
+  background-color: #000;
+}
+.irs--round .irs-bar {
+  top: 15px;
+  height: 2px;
+  background-color: #ffb900;
+}
+.irs--round .irs-bar--single {
+  border-radius: 4px 0 0 4px;
+}
+.irs--round .irs-handle {
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffb900;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.irs--round .irs-handle.state_hover,
+.irs--round .irs-handle:hover {
+  background-color: #ffc52c;
+  cursor: pointer;
+}
+.irs--round .irs-from,
+.irs--round .irs-to,
+.irs--round .irs-single {
+  font-size: 1rem;
+  line-height: 1;
+  text-shadow: none;
+  padding: 3px 5px;
+  color: #000;
+}

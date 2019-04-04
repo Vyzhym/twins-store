@@ -1,0 +1,50 @@
+.card
+	padding-top: 100px
+	display: flex
+	flex-wrap: wrap
+	&__info
+		flex: 1 100%
+		max-width: 100%
+		display: flex
+		flex-wrap: wrap
+		&-title
+			flex: 1 100%
+			max-width: 100%
+		&-poster,
+		&-description
+			flex: 1 50%
+			max-width: 50%
+		&-poster
+			&:before
+				position: absolute
+				left: -35%
+				top: 50%
+				transform: translateY(-50%)
+				content: ''
+				display: block
+				background-image: url('../img/logo_round_yellow.png')
+				background-size: contain
+				background-position: center
+				background-repeat: no-repeat
+				width: 350px
+				height: 350px
+				animation-name: spinRound
+				animation-duration: 10s
+				animation-iteration-count: infinite
+				animation-timing-function: linear
+			.card
+				&__poster
+					&-carousel
+						margin-bottom: 30px
+						&-item
+							img
+								width: 100%
+								height: auto
+						&-nav
+							&__item
+								margin-right: 30px
+								img
+									width: 100%
+									height: auto
+								&:hover
+									cursor: pointer

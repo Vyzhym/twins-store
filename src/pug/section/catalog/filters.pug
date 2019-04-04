@@ -1,0 +1,33 @@
+include ../../mixins/_input.pug
+include ../../mixins/_color.pug
+
+aside.aside.catalog__filter
+	.aside__content
+		.catalog__filter-price
+			.catalog__filter-price__title Цена
+			input.price-range#price(type="text", name="price", data-skin="round", data-type="double", data-min="0", data-max="5000", data-from="300", data-to="1500", data-grid="false", data-hide-min-max="true")
+		.catalog__filter-type
+			+checkbox('cloth', 'cloth', 'Ткань')
+			+checkbox('leather', 'leather', 'Кожа')
+		.catalog__filter-color
+			+checkbox('multicolor', 'multicolor', 'Разноцветные')
+			+checkbox('singlecolor', 'singlecolor', 'Однотонные')
+			.catalog__filter-color__list
+				+color('red')
+				+color('green')
+				+color('black')
+				+color('blue')
+				+color('orange')
+				+color('green')
+				+color('black')
+				+color('blue')
+				+color('orange')
+		.catalog__filter-size
+			+checkbox('adults', 'adults', 'Взрослые')
+			+checkbox('children', 'children', 'Детские')
+		.catalog__filter-date
+			+checkbox('new', 'new', 'Новинки')
+			+checkbox('stock', 'stock', 'Акции')
+		.catalog__filter-sex
+			+checkbox('woman', 'woman', 'Женские')
+			+checkbox('man', 'man', 'Мужские')

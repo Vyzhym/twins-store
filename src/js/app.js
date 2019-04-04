@@ -13,12 +13,12 @@ $(function () {
 		duplicated: true
 	});
 
-	console.log(globalWidth);
-
 	if (globalWidth <= 420)
 		$('.header__after-text').marquee({
 			duration: 7000,
 			startVisible: true,
 			duplicated: true
 		});
+
+	$(".price-range").ionRangeSlider();
 });

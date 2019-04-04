@@ -24,9 +24,11 @@
 		flex: 0 1 50%
 		max-width: 50%
 		& > .image
-			position: relative
-			text-align: right
+			position: absolute
 			z-index: 5
+			top: 50%
+			transform: translateY(-50%)
+			right: 0
 			& > img
 				width: auto
 				height: 470px
@@ -46,3 +48,12 @@
 			height: 150px
 			border-radius: 50%
 			background-image: linear-gradient(to bottom, #ffb900, #f9ea00)
+
+@media (max-width: 1440px)
+	.contact
+		&__info
+			flex: 0 0 40%
+			max-width: 40%
+		&__map
+			flex: 0 1 60%
+			max-width: 60%

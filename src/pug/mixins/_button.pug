@@ -1,3 +1,4 @@
-mixin button(name)
-	a(href="#")
-		span {#name}
+mixin button(name, href, textColor)
+	a.btn.btn-primary(href=href)
+		span.link-background
+		span.link-title(style="color: " + textColor + ";")= name
