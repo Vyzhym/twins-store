@@ -1,0 +1,75 @@
+include ../../mixins/_color.pug
+include ../../mixins/_button.pug
+
+section.card__info
+	header.card__info-title
+		h1 Черная кожаная бананка с цепочкой
+	section.card__info-poster
+		.card__poster-carousel
+			.card__poster-carousel-item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-item
+				div
+					img(src="/img/items/search.png", alt="")
+		.card__poster-carousel-nav
+			.card__poster-carousel-nav__item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-nav__item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-nav__item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-nav__item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-nav__item
+				div
+					img(src="/img/items/search.png", alt="")
+			.card__poster-carousel-nav__item
+				div
+					img(src="/img/items/search.png", alt="")
+	section.card__info-description
+		.description__top
+			.color__list
+				span(data-color="black", aria-select="true")
+					span.color(style="background-color: black;")
+				span(data-color="gray", aria-select="false")
+					span.color(style="background-color: gray;")
+				span(data-color="red", aria-select="false")
+					span.color(style="background-color: red;")
+			.price
+				span 425
+				|
+				| грн.
+		.description__middle
+			.size__list
+				.size__list-item(data-size="big" aria-select="true") Взрослая
+				.size__list-item(data-size="children" aria-select="false") Детская
+		.description__bottom
+			.card__info
+				ul
+					li Охват талии: 75 - 135см
+					li Размер: 30 х 14 см
+					li Материал: PU-кожа
+					li Отделение: 3 кармана
+			.count
+				.counter(data-max="7")
+					span.counter-plus +
+					span.counter-number 1
+					span.counter-minus -
+				+button('Добавить в корзину', '#', '#000')

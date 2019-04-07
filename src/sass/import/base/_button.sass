@@ -11,8 +11,17 @@
 			height: 85px
 			border-radius: 50%
 			background-image: linear-gradient(to bottom, #ffb900, #f9ea00)
+			transition: all 1s ease
 		.link-title
 			position: relative
 			z-index: 5
 			color: $font-color-primary
 			font-weight: 500
+	&-primary
+		&:hover
+			.link-background
+				top: -11px
+				right: -17px
+				width: 200px
+				height: 40px
+				border-radius: 4px

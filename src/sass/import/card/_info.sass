@@ -48,3 +48,80 @@
 									height: auto
 								&:hover
 									cursor: pointer
+		&-description
+			margin-top: 50px
+			padding-left: 50px
+			.description
+				&__top,
+				&__middle,
+				&__bottom
+					display: flex
+					align-items: center
+			.color__list
+				flex: 1 50%
+				max-width: 50%
+				span
+					display: inline-flex
+					align-items: center
+					justify-content: center
+					width: 30px
+					height: 30px
+					border-radius: 30px
+					&:not(:last-of-type)
+						margin-right: 15px
+					&:hover
+						cursor: pointer
+					& > span
+						width: 20px
+						height: 20px
+						border-radius: 20px
+			.price
+				flex: 1 50%
+				max-width: 50%
+				text-align: right
+				font-size: 1.5rem
+				font-weight: bold
+			.size__list
+				display: inline-flex
+				margin: 60px 0
+				&-item
+					padding: 5px 10px
+					border: 2px solid #ffffff
+					transition: all .2s linear
+					&:first-child
+						margin-right: 30px
+					&:hover,
+					&[aria-select="true"]
+						border: 2px solid #000000
+						font-weight: 500
+						cursor: pointer
+			.card__info
+				flex: 1 50%
+				& > ul
+					list-style: none
+					margin: 0
+					padding: 0
+					li:not(:last-of-type)
+						margin-bottom: 10px
+			.count
+				flex: 1 50%
+				text-align: right
+				padding-right: 30px
+				.counter
+					margin-bottom: 50px
+					span
+						display: inline-flex
+						align-items: center
+						justify-content: center
+						width: 36px
+						height: 36px
+						border: 2px solid #000000
+						transition: all .3s ease
+						&:first-child
+							border-right: none
+						&:last-child
+							border-left: none
+					&-plus:hover,
+					&-minus:hover
+						cursor: pointer
+						background-color: $primary

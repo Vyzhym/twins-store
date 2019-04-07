@@ -7,6 +7,9 @@
 	margin-right: 30px
 	margin-bottom: 30px
 	padding: 30px
+	transition: transform .5s ease
+	&:hover
+		transform: scale(1.05)
 	&:nth-child(n)
 		margin-left: 0
 	&:nth-child(2n)
@@ -31,10 +34,6 @@
 		img
 			max-width: 100%
 			height: auto
-			transition: transform .3s linear
-		&:hover
-			img
-				transform: scale(.9)
 	&-title
 		margin-top: 30px
 		margin-bottom: 15px

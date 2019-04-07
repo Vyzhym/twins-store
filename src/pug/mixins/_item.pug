@@ -1,3 +1,5 @@
+include _button.pug
+
 mixin item()
 	article.item__card
 		.item__card-new
@@ -38,3 +40,13 @@ mixin itemPromotion(vars)
 			.item__card-bottom__price.price__promotion
 				span.before 425 грн.
 				span.after 425 грн.
+
+mixin prizeItem()
+	article.item__prize
+		.item__prize-image
+			img(src="/img/items/search.png", alt="")
+		.item__prize-info
+			.item__prize-info__title Подарочная банка
+			.item__prize-info__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat modi nobis non sunt assumenda in saepe aliquam asperiores. Quia soluta sint nostrum nobis eum quo, architecto laboriosam minus numquam quos?
+			.item__prize-info__button
+				+button('Добавить в корзину', '#', '#000')

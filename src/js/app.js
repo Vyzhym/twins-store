@@ -20,5 +20,22 @@ $(function () {
 			duplicated: true
 		});
 
-	$(".price-range").ionRangeSlider();
+	$('.price-range').ionRangeSlider();
+
+	$('.size__list-item').click(function (e) {
+		e.preventDefault();
+		$('.size__list-item').filter(function() {
+			return $(this).attr('aria-select') != false;
+		}).attr('aria-select', false);
+		$(this).attr('aria-select', true);
+	});
+
+	$('.color__list span').click(function (e) {
+		e.preventDefault();
+		let color = $(this).data('color');
+		$('.color__list span').filter(function() {
+			return $(this).attr('aria-select') != false;
+		}).attr('aria-select', false).css('border', 'none');
+		$(this).attr('aria-select', true).css('border', '1px solid ' + color);
+	});
 });

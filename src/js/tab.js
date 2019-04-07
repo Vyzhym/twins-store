@@ -25,7 +25,7 @@
 
 			contentItem.filter(function () {
 				return $(this).data('tab-id') == id;
-			}).delay(290)
+			}).delay(280)
 			.fadeIn(300, function () {
 				$(this).attr('aria-hidden', false);
 			});
