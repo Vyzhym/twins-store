@@ -3,6 +3,7 @@
 	z-index: 10005
 	width: 100%
 	background-color: #ffffff
+	border-bottom: 2px solid $primary
 	& > .container
 		display: flex
 		align-items: center
@@ -70,17 +71,4 @@
 			vertical-align: middle
 			width: 25px
 			height: 25px
-	&__after
-		position: relative
-		background-color: $primary
-		text-align: center
-		&-language
-			position: absolute
-			right: 0
-			top: 0
-			& > a
-				color: $font-color-primary
-				&:hover
-					color: $font-color-secondary
-				&:not(:last-of-type)
-					margin-right: 15px
+

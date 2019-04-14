@@ -26,8 +26,8 @@
 				background-color: $primary
 				height: 420px
 				width: 420px
+				transition: transform .3s ease
 				img
-					transition: transform .3s ease
 					max-width: 350px
 				.banana-image
 					max-width: 250px
@@ -35,17 +35,23 @@
 				.title
 					color: $primary
 				.image
-					img
-						transform: scale(1.05)
+					transform: scale(1.05)
 
 @media (max-width: 1440px)
 	.category
 		&__list
 			&-item
-				margin-left: 65px
-				max-width: 340px
+				margin-left: 100px
+				max-width: 380px
 				.image
-					width: 340px
-					height: 340px
+					width: 380px
+					height: 380px
 					img
-						max-width: 200px
+						max-width: 250px
+
+@media (max-width: 1366px)
+	.category
+		&__list
+			&-item
+				margin-left: 100px
+				max-width: 360px

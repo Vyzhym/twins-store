@@ -22,7 +22,10 @@ const path = {
 		font  : 'build/font/'
 	},
 	src: {
-		pug  : 'src/pug/*.pug',
+		pug  : {
+			watch: 'src/pug/**/*.pug',
+			prod: 'src/pug/*.pug'
+		},
 		js   : 'src/js/**/*.js',
 		style: 'src/sass/**/*.{sass,scss}',
 		image: 'src/img/**/*.{jpg,jpeg,png,gif,svg,ico}',
@@ -95,9 +98,12 @@ task('sass:dev', function() {
 			title: 'SASS'
 		}))
 		.pipe(sourcemaps.init())
-		.pipe(cleancss())
 		.pipe(autoprefixer({
 			browsers: ['last 4 versions']
+		}))
+		.pipe(cleancss())
+		.pipe(rename({
+			suffix: '.min'
 		}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(dest(path.build.style))
@@ -120,18 +126,20 @@ task('sass:build', function() {
 });
 
 task('pug:dev', function() {
-	return src(path.src.pug)
+	return src(path.src.pug.prod)
+		.pipe(pug({
+			pretty: true
+		}))
 		.on('error', notify.onError({
 			message: '\n<%= error.message %>',
 			title: 'PUG'
 		}))
-		.pipe(pug())
 		.pipe(dest(path.build.pug))
 		.pipe(browserSync.stream());
 });
 
 task('pug:build', function() {
-	return src(path.src.pug)
+	return src(path.src.pug.prod)
 		.pipe(pug({
 			pretty: true
 		}))
@@ -190,7 +198,7 @@ task('csslib', function() {
 });
 
 task('watcher', function() {
-	watch(path.src.pug, series('pug:dev', 'reload'));
+	watch(path.src.pug.watch, series('pug:dev', 'reload'));
 	watch(path.src.style, series('sass:dev', 'reload'));
 	watch(path.src.js, series('js:dev', 'reload'));
 	watch(path.src.image, series('image:dev', 'reload'));
@@ -203,5 +211,5 @@ task('clear', function() {
 	return del(path.build.pug);
 });
 
-task('dev', parallel('pug:dev', 'js:dev', 'sass:dev', 'image:dev', 'csslib', 'jslib', 'font', 'browserSyncServer', 'watcher'));
+task('dev', series('clear', 'pug:dev', 'js:dev', 'sass:dev', 'image:dev', 'csslib', 'jslib', 'font', 'browserSyncServer', 'watcher'));
 task('build', series('clear', 'pug:build', 'js:build', 'sass:build', 'image:build', 'csslib', 'jslib', 'font'));
